@@ -13,9 +13,10 @@ public class OptionMenu extends Account {
 		HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
 		HashMap<Integer, String> names = new HashMap<Integer, String>();
 			
+		
 		public void createATM() throws IOException{
 		while(true) {
-			
+			System.out.println("welcome Everiyone");
 			System.out.println("1 - Login");
 			System.out.println("2 - Register New Account");
 			System.out.println("3 - Exit");
@@ -134,7 +135,7 @@ public class OptionMenu extends Account {
 			}
 			
 			public void getChecking() {
-				System.out.println("Current Acccount: ");
+				System.out.println("Fam Acccount: ");
 				System.out.println("type 1 - View Balance");
 				System.out.println("type 2 - Withdraw Funds");
 				System.out.println("type 3 - Deposit Funds");

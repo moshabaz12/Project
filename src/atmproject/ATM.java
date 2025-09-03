@@ -8,6 +8,7 @@ public class ATM extends OptionMenu {
 		OptionMenu optionMenu = new OptionMenu();
 		
 		optionMenu.createATM();
+		
 		//optionMenu.getLogin();
 
 	}
