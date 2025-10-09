@@ -19,7 +19,7 @@ public class Large_of_3 {
 		
 
 		
-		// wap to find the larges of 4 numbers
+		// wap to find the larges of 3 numbers
 		if(a>b && a>c && a>d){
 			System.out.println("this is rong ");
 		}else if(b>a && b>c  && b>d) {
