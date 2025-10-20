@@ -47,7 +47,7 @@ public class AnalogClock extends JPanel implements Runnable {
         dayStr = sdfDay.format(d);
 
         int centerX = getWidth() / 2;
-        int centerY = getHeight() / 2 - 30; // thoda upar shift kiya
+        int centerY = getHeight() / 2 - 30; 
         int radius = Math.min(centerX, centerY) - 30;
 
         g2.setStroke(new BasicStroke(8));
@@ -80,7 +80,7 @@ public class AnalogClock extends JPanel implements Runnable {
             g2.drawLine(x1, y1, x2, y2);
         }
 
-        // Hour hand------
+        // Hour hand
         double hourAngle = Math.toRadians((hours % 12 + minutes / 60.0) * 30 - 90);
         int hourX = (int) (centerX + (radius - 100) * Math.cos(hourAngle));
         int hourY = (int) (centerY + (radius - 100) * Math.sin(hourAngle));
@@ -88,7 +88,7 @@ public class AnalogClock extends JPanel implements Runnable {
         g2.setStroke(new BasicStroke(5));
         g2.drawLine(centerX, centerY, hourX, hourY);
 
-        // Minute hand-------
+        // Minute hand
         double minuteAngle = Math.toRadians((minutes + seconds / 60.0) * 6 - 90);
         int minX = (int) (centerX + (radius - 60) * Math.cos(minuteAngle));
         int minY = (int) (centerY + (radius - 60) * Math.sin(minuteAngle));
@@ -96,7 +96,7 @@ public class AnalogClock extends JPanel implements Runnable {
         g2.setStroke(new BasicStroke(3));
         g2.drawLine(centerX, centerY, minX, minY);
 
-        // Second hand-------
+        // Second hand
         double secondAngle = Math.toRadians(seconds * 6 - 90);
         int secX = (int) (centerX + (radius - 40) * Math.cos(secondAngle));
         int secY = (int) (centerY + (radius - 40) * Math.sin(secondAngle));
@@ -112,15 +112,23 @@ public class AnalogClock extends JPanel implements Runnable {
         g2.setFont(new Font("Verdana", Font.BOLD, 20));
         g2.setColor(Color.CYAN);
         g2.drawString(dayStr + ", " + dateStr, centerX - 100, centerY + radius + 40);
+
+        // 💫 Stylish Name in Center Bottom
+        g2.setFont(new Font("Serif", Font.BOLD, 26));
+        g2.setColor(new Color(255, 223, 0)); // golden yellow
+        String name = "By Shabaz";
+        FontMetrics fm = g2.getFontMetrics();
+        int nameWidth = fm.stringWidth(name);
+        g2.drawString(name, centerX - nameWidth / 2, centerY + radius + 80);
     }
 
     public static void main(String[] args) {
-        JFrame f = new JFrame("Analog Clock with Date & Day");
+        JFrame f = new JFrame("Analog Clock with Date, Day & Name");
         AnalogClock clock = new AnalogClock();
         f.add(clock);
         f.setSize(500, 550);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setLocationRelativeTo(null); // center of screen
+        f.setLocationRelativeTo(null);
         f.setVisible(true);
         clock.start();
     }

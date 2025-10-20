@@ -56,7 +56,8 @@ public class DigitalClock extends JFrame implements Runnable {
                 Thread.sleep(1000); // update every 1 second
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            e.printStackTrace(); 
+   
         }
     }
 
