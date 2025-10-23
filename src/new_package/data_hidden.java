@@ -8,7 +8,7 @@ class Roma{
 			age = a;
 		}else {
 		System.out.println("invailed age!");
-		
+	
 		}
 	}
 }
